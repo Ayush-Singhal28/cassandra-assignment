@@ -8,6 +8,7 @@ object CassandraQuery extends App with CassandraProvider {
 
   val operation = new Operation
   cassandraSession.getCluster.getConfiguration.getQueryOptions.setConsistencyLevel(ConsistencyLevel.QUORUM)
+  cassandraSession.close()
 
 
   val empId = 3

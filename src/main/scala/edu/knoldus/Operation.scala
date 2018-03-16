@@ -44,7 +44,7 @@ class Operation {
 
   }
 
-  private def deletingDataByCity(cassandraSession: Session, city: String): Unit = {
+   def deletingDataByCity(cassandraSession: Session, city: String): Unit = {
     cassandraSession.execute("create table newEmployee(emp_id int,emp_name text,emp_city text,emp_salary varint,emp_phone varint,primary key(emp_city));")
     cassandraSession.execute("insert into newEmployee(emp_id, emp_name, emp_city, emp_salary, emp_phone) VALUES(1, 'Ayush', 'Delhi', 50000, 9876543210)")
     cassandraSession.execute("insert into newEmployee(emp_id, emp_name, emp_city, emp_salary, emp_phone) values( 2,'Vaibhav','Chandigarh',30000,9897888654)")
